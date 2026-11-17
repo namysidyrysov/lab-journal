@@ -1,0 +1,5 @@
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f5f6f8;color:#222;line-height:1.5}
+.start{max-width:640px;margin:15vh auto;padding:0 24px;text-align:center}
+.start h1{margin:0 0 8px;font-size:32px}
+.ok{color:#15803d}
+.bad{color:#b91c1c}

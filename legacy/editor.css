@@ -1,0 +1,237 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f6f8;
+  color: #222;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== Выезжающая панель ===== */
+.sidebar-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+  opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 90;
+}
+.sidebar-backdrop.open { opacity: 1; pointer-events: auto; }
+
+.sidebar {
+  position: fixed; top: 0; left: 0; height: 100vh; width: 300px;
+  background: #1f2937; color: #e5e7eb;
+  display: flex; flex-direction: column;
+  transform: translateX(-100%); transition: transform .25s ease;
+  z-index: 100;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.2);
+}
+.sidebar.open { transform: translateX(0); }
+
+.sidebar-header {
+  padding: 16px; display: flex; justify-content: space-between;
+  align-items: center; border-bottom: 1px solid #374151;
+}
+.sidebar-header h1 { font-size: 18px; margin: 0; }
+.sidebar-header button {
+  background: transparent; border: none; color: #9ca3af;
+  font-size: 22px; cursor: pointer; line-height: 1; padding: 0 6px;
+}
+.sidebar-header button:hover { color: #fff; }
+
+.sidebar-actions { padding: 12px 16px; }
+.sidebar-actions button {
+  width: 100%; background: #3b82f6; color: #fff; border: none;
+  border-radius: 6px; padding: 10px; cursor: pointer; font-size: 14px;
+  font-weight: 500;
+}
+.sidebar-actions button:hover { background: #2563eb; }
+
+.exp-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+.exp-list li {
+  padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #374151;
+  font-size: 14px; display: flex; justify-content: space-between;
+  align-items: center; gap: 8px;
+}
+.exp-list li:hover { background: #374151; }
+.exp-list li.active { background: #2563eb; }
+.exp-list li .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.exp-list li .del {
+  background: transparent; border: none; color: #9ca3af;
+  cursor: pointer; font-size: 16px; padding: 0 4px;
+}
+.exp-list li .del:hover { color: #f87171; }
+
+.sidebar-footer {
+  padding: 12px; border-top: 1px solid #374151;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.save-status {
+  font-size: 12px; color: #9ca3af; text-align: center;
+  min-height: 16px; transition: color .2s;
+}
+.save-status.saved  { color: #4ade80; }
+.save-status.saving { color: #fbbf24; }
+.save-status.error  { color: #f87171; }
+
+.sidebar-footer button {
+  background: #374151; color: #e5e7eb; border: 1px solid #4b5563;
+  border-radius: 6px; padding: 8px; cursor: pointer; font-size: 13px;
+}
+.sidebar-footer button:hover { background: #4b5563; }
+.sidebar-footer button.primary { background: #3b82f6; border-color: #3b82f6; }
+.sidebar-footer button.primary:hover { background: #2563eb; }
+
+/* ===== Основная область ===== */
+.app { height: 100vh; display: flex; flex-direction: column; }
+
+.topbar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; background: #fff; border-bottom: 1px solid #e5e7eb;
+}
+.hamburger {
+  background: transparent; border: 1px solid transparent; border-radius: 6px;
+  font-size: 20px; cursor: pointer; padding: 4px 10px; color: #444;
+}
+.hamburger:hover { background: #eef2ff; border-color: #c7d2fe; }
+.topbar-title { font-weight: 600; color: #555; font-size: 14px; flex: 1; }
+
+.editor { flex: 1; overflow-y: auto; padding: 24px; }
+.empty-state { color: #888; text-align: center; margin-top: 100px; font-size: 16px; }
+.editor-body { max-width: 900px; margin: 0 auto; }
+
+/* ===== Шапка эксперимента ===== */
+.exp-header {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 1px solid #e5e7eb;
+}
+.exp-label { color: #666; font-size: 14px; }
+
+.exp-num { display: flex; align-items: center; gap: 8px; }
+.exp-num input {
+  width: 70px; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 6px;
+  font-size: 20px; font-weight: 600; font-family: inherit; text-align: center;
+}
+.exp-num input:focus { outline: none; border-color: #3b82f6; }
+
+.exp-date { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.date-part {
+  padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 6px;
+  font-family: inherit; font-size: 14px; background: #fff;
+}
+.date-part:focus { outline: none; border-color: #3b82f6; }
+.date-part.day  { width: 50px; text-align: center; }
+.date-part.month{ width: 110px; }
+.date-part.year { width: 70px; text-align: center; }
+
+/* ===== Поле ===== */
+.field {
+  background: #fff; border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  margin-bottom: 20px; overflow: hidden;
+}
+.field-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px; border-bottom: 1px solid #eef0f3;
+  background: #fafbfc; flex-wrap: wrap; gap: 8px;
+}
+.field-header h2 {
+  font-size: 14px; margin: 0; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #555;
+}
+
+.toolbar { display: flex; gap: 4px; }
+.toolbar button {
+  background: #fff; border: 1px solid #d1d5db; border-radius: 4px;
+  padding: 4px 8px; cursor: pointer; font-size: 12px; min-width: 28px;
+}
+.toolbar button:hover { background: #eef2ff; border-color: #818cf8; }
+
+/* ===== Rich text ===== */
+.richtext {
+  padding: 14px 16px; min-height: 70px; outline: none;
+  font-size: 14px; line-height: 1.6;
+}
+.richtext:empty::before {
+  content: attr(data-placeholder);
+  color: #b0b5bd;
+  pointer-events: none;
+  font-style: italic;
+}
+.richtext ul, .richtext ol { padding-left: 24px; margin: 6px 0; }
+.richtext p { margin: 6px 0; }
+.richtext.drag-block { outline: 2px dashed #fca5a5; outline-offset: -4px; }
+
+/* ===== Галерея ===== */
+.gallery-wrap { padding: 12px 16px 16px; border-top: 1px solid #eef0f3; }
+
+.gallery-toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+.gallery-toolbar button {
+  border-radius: 6px; padding: 6px 12px; cursor: pointer;
+  font-size: 13px; font-weight: 500; border: 1px solid;
+}
+.btn-insert-from-device {
+  background: #eef2ff; border-color: #c7d2fe; color: #3730a3;
+}
+.btn-insert-from-device:hover { background: #e0e7ff; border-color: #818cf8; }
+.btn-insert-from-buffer {
+  background: #ecfdf5; border-color: #a7f3d0; color: #065f46;
+}
+.btn-insert-from-buffer:hover { background: #d1fae5; border-color: #34d399; }
+
+.gallery {
+  margin-top: 10px; padding: 12px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px; min-height: 90px;
+  border: 2px dashed transparent; border-radius: 8px;
+  transition: background .15s, border-color .15s;
+  outline: none;
+}
+.gallery:focus { border-color: #a5b4fc; }
+.gallery.dragover { background: #eef2ff; border-color: #818cf8; }
+.gallery.paste-active { border-color: #3b82f6; background: #eff6ff; }
+
+.gallery-dropzone {
+  grid-column: 1 / -1; border: 1px dashed #d1d5db; border-radius: 8px;
+  padding: 20px; text-align: center; color: #999; font-size: 13px;
+}
+.gallery.has-items .gallery-dropzone {
+  padding: 6px; font-size: 11px; border-style: dotted;
+}
+
+.gallery-item {
+  position: relative; background: #f9fafb; border-radius: 6px;
+  border: 1px solid #e5e7eb; overflow: hidden; cursor: grab;
+  display: flex; flex-direction: column;
+}
+.gallery-item.dragging { opacity: 0.4; }
+.gallery-item.drag-over { border-color: #3b82f6; box-shadow: 0 0 0 2px #93c5fd; }
+.gallery-item img {
+  width: 100%; height: 120px; object-fit: cover;
+  display: block; background: #fff;
+}
+
+.gallery-item figcaption {
+  padding: 6px 8px; font-size: 13px; color: #111;
+  text-align: center; outline: none;
+  min-height: 28px; line-height: 1.4;
+}
+.gallery-item figcaption:empty::before {
+  content: "Подпись";
+  color: #b0b5bd; font-style: italic;
+}
+
+.item-actions {
+  position: absolute; top: 4px; right: 4px; display: flex; gap: 4px;
+  opacity: 0; transition: opacity .15s;
+}
+.gallery-item:hover .item-actions { opacity: 1; }
+.item-actions button {
+  background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 4px;
+  width: 24px; height: 24px; cursor: pointer; font-size: 12px; padding: 0;
+}
+.item-actions button:hover { background: rgba(220,38,38,0.9); }
+
+@media (max-width: 900px) {
+  .editor { padding: 12px; }
+  .exp-header { flex-direction: column; align-items: flex-start; }
+}
