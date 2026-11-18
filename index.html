@@ -11,7 +11,21 @@
   <h1>lab-journal</h1>
   <p>Редактор лабораторного журнала</p>
   <p id="check"></p>
+  <button id="open" class="btn">📂 Открыть папку проекта</button>
+
+  <section id="project" hidden>
+    <h2 id="pname"></h2>
+    <p id="pstate"></p>
+    <ol id="plist"></ol>
+    <button id="convert" class="btn" hidden>Преобразовать в новый формат</button>
+    <button id="create" class="btn" hidden>Создать пустой журнал</button>
+    <p id="msg"></p>
+  </section>
 </main>
+<script src="src/format.js"></script>
+<script src="src/view.js"></script>
+<script src="src/legacy.js"></script>
+<script src="src/disk.js"></script>
 <script src="src/app.js"></script>
 </body>
 </html>
