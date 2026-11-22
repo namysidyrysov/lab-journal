@@ -10,10 +10,16 @@ LJ.disk = {
     return dir.getFileHandle(name, { create });
   },
 
+  // Файл (File) или null, если его нет.
+  async file(dir, path) {
+    try { return await (await this._file(dir, path, false)).getFile(); }
+    catch (e) { if (e.name === 'NotFoundError') return null; throw e; }
+  },
+
   // Текст файла или null, если файла нет.
   async read(dir, path) {
-    try { return await (await (await this._file(dir, path, false)).getFile()).text(); }
-    catch (e) { if (e.name === 'NotFoundError') return null; throw e; }
+    const f = await this.file(dir, path);
+    return f ? f.text() : null;
   },
 
   async write(dir, path, text) {
@@ -32,5 +38,16 @@ LJ.disk = {
     const path = `backups/journal-${this.stamp()}${label ? '-' + label : ''}.html`;
     await this.write(dir, path, text);
     return path;
+  },
+
+  // Оставляет в backups/ только последние keep копий (копии "-original" не трогает).
+  async prune(dir, keep = 20) {
+    try {
+      const d = await dir.getDirectoryHandle('backups');
+      const names = [];
+      for await (const [n, h] of d.entries()) if (h.kind === 'file' && !n.includes('-original')) names.push(n);
+      names.sort();
+      for (const n of names.slice(0, Math.max(0, names.length - keep))) await d.removeEntry(n);
+    } catch (e) { if (e.name !== 'NotFoundError') throw e; }
   }
 };

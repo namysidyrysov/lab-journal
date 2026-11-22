@@ -1,7 +1,10 @@
-// Шаг 2: открыть папку проекта, прочитать журнал, при необходимости преобразовать старый формат.
+// Стартовый экран: открыть папку проекта и передать журнал редактору.
 
 const $ = id => document.getElementById(id);
 const state = { dir: null, text: null, data: null };
+
+// Стили журнала (те же, что в journal.html) — до стилей приложения.
+document.head.insertAdjacentHTML('afterbegin', '<style>' + LJ.VIEW_CSS + '</style>');
 
 function msg(text, cls) { const m = $('msg'); m.textContent = text; m.className = cls || ''; }
 function fail(e) { console.error(e); msg('Ошибка: ' + (e.message || e), 'bad'); }
@@ -20,10 +23,8 @@ function showList(data) {
   ol.innerHTML = '';
   data.blocks.forEach(b => {
     const li = document.createElement('li');
-    if (b.type === 'experiment') {
-      const imgs = b.columns.reduce((s, c) => s + LJ.imgCount(c.html), 0);
-      li.textContent = `${b.title}${b.date ? ' · ' + b.date : ''} — колонок: ${b.columns.length}, картинок: ${imgs}`;
-    } else li.textContent = 'Текстовый блок';
+    const imgs = b.columns.reduce((s, c) => s + c.images.length, 0);
+    li.textContent = `${LJ.fmtDate(b.date) || 'дата не распознана'} — колонок: ${b.columns.length}, картинок: ${imgs}`;
     ol.append(li);
   });
 }
@@ -41,20 +42,20 @@ async function load() {
     return;
   }
   const data = LJ.extract(state.text);
-  if (data) {
-    state.data = data;
-    $('pstate').textContent = `Журнал lab-journal. Блоков: ${data.blocks.length}.`;
-    showList(data);
-    return;
-  }
+  if (data) { await Editor.open(state.dir, data, state.text); return; }
+
+  // Не наш формат: пробуем распознать журнал старого вида.
   const { data: legacy, imgsInSource } = LJ.importLegacy(state.text);
   if (!legacy.blocks.length) { $('pstate').textContent = 'Не удалось распознать journal.html.'; return; }
   state.data = legacy;
-  const imgsNow = legacy.blocks.reduce((s, b) => s + (b.columns || []).reduce((t, c) => t + LJ.imgCount(c.html), 0), 0);
+  const imgsNow = LJ.countImages(legacy);
   $('pstate').textContent = `Найден журнал старого формата: экспериментов ${legacy.blocks.length}. Файл пока не изменён.`;
   showList(legacy);
   $('convert').hidden = false;
-  if (imgsNow !== imgsInSource) msg(`⚠ Картинок в файле ${imgsInSource}, при импорте распознано ${imgsNow}. Не преобразуйте, сначала напишите мне.`, 'bad');
+  if (imgsNow !== imgsInSource) {
+    $('convert').hidden = true;
+    msg(`⚠ Картинок в файле ${imgsInSource}, при импорте распознано ${imgsNow}. Преобразование отключено.`, 'bad');
+  }
 }
 
 $('open').onclick = async () => {
@@ -67,7 +68,6 @@ $('create').onclick = async () => {
   try {
     await LJ.disk.write(state.dir, 'journal.html', LJ.serialize(LJ.emptyData()));
     await load();
-    msg('Пустой журнал создан ✓', 'ok');
   } catch (e) { fail(e); }
 };
 
@@ -78,6 +78,10 @@ $('convert').onclick = async () => {
     const back = LJ.extract(await LJ.disk.read(state.dir, 'journal.html'));
     if (JSON.stringify(back) !== JSON.stringify(state.data)) throw new Error('Проверка после записи не прошла. Оригинал сохранён: ' + bpath);
     await load();
-    msg(`Готово ✓ Копия оригинала: ${bpath}. Откройте journal.html и проверьте.`, 'ok');
   } catch (e) { fail(e); }
+};
+
+$('back').onclick = async () => {
+  await Editor.close();
+  $('project').hidden = true;
 };

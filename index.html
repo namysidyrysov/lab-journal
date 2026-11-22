@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-<main class="start">
+
+<!-- Стартовый экран -->
+<main class="start" id="start">
   <h1>lab-journal</h1>
   <p>Редактор лабораторного журнала</p>
   <p id="check"></p>
@@ -22,10 +24,41 @@
     <p id="msg"></p>
   </section>
 </main>
+
+<!-- Редактор -->
+<div id="editor" hidden>
+  <div id="bar">
+    <button data-f="toc" title="Оглавление">☰</button>
+    <button id="back">← Проекты</button>
+    <b id="pname2"></b>
+    <span class="sep"></span>
+    <button data-c="bold" title="Жирный"><b>B</b></button>
+    <button data-c="italic" title="Курсив"><i>I</i></button>
+    <button data-c="insertUnorderedList" title="Список">•</button>
+    <button data-c="insertOrderedList" title="Нумерованный список">1.</button>
+    <button data-c="subscript" title="Нижний индекс">x₂</button>
+    <button data-c="superscript" title="Верхний индекс">x²</button>
+    <button data-c="h2" title="Заголовок">H</button>
+    <span class="sep"></span>
+    <button data-f="exp">+ Эксперимент</button>
+    <button data-f="txt">+ Текст</button>
+    <span class="sep"></span>
+    <button data-f="save" title="Ctrl+S">💾</button>
+    <span id="st"></span>
+  </div>
+  <nav id="toc"><div class="tochead"><b>Журнал</b><button id="tocx" title="Закрыть">×</button></div><div id="toclist"></div></nav>
+  <header><h1 id="T" class="ed plain" data-ph="Название журнала"></h1><p id="S" class="subtitle ed plain" data-ph="Подзаголовок"></p></header>
+  <main id="doc"></main>
+</div>
+
+<dialog id="dlg"></dialog>
+<div class="lightbox"><img alt=""></div>
+
 <script src="src/format.js"></script>
 <script src="src/view.js"></script>
 <script src="src/legacy.js"></script>
 <script src="src/disk.js"></script>
+<script src="src/editor.js"></script>
 <script src="src/app.js"></script>
 </body>
 </html>

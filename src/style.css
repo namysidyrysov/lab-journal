@@ -1,4 +1,4 @@
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;background:#f5f6f8;color:#222;line-height:1.5}
+/* Стартовый экран */
 .start{max-width:760px;margin:8vh auto;padding:0 24px}
 .start h1{margin:0 0 4px;font-size:32px}
 .btn{background:#2563eb;color:#fff;border:0;border-radius:6px;padding:10px 16px;font-size:15px;cursor:pointer;margin-right:8px}
@@ -8,3 +8,88 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;m
 #plist{padding-left:22px;font-size:14px}
 .ok{color:#15803d}
 .bad{color:#b91c1c}
+
+/* Редактор (стили самого журнала подключаются из view.js) */
+#bar{position:sticky;top:0;z-index:20;background:#1e293b;color:#fff;padding:8px 12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:-24px -24px 20px}
+#bar button{background:#334155;color:#fff;border:0;border-radius:5px;padding:6px 10px;cursor:pointer;font-size:14px}
+#bar button:hover{background:#475569}
+#bar .sep{width:1px;height:22px;background:#475569;margin:0 4px}
+#st{font-size:13px;margin-left:6px;color:#cbd5e1}
+#st.ok{color:#86efac}
+#st.bad{color:#fca5a5}
+
+/* оглавление: выезжающая панель */
+#toc{position:fixed;left:0;top:0;bottom:0;width:280px;background:#1e293b;color:#fff;z-index:40;transform:translateX(-100%);transition:transform .2s;padding:14px;overflow:auto;box-shadow:4px 0 16px rgba(0,0,0,.3)}
+#toc.open{transform:none}
+.tochead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:18px}
+.tochead button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
+#toclist a{display:block;padding:8px 10px;border-radius:5px;cursor:pointer;font-size:14px}
+#toclist a:hover{background:#334155}
+
+.blk{position:relative;scroll-margin-top:60px}
+
+/* поля ввода: контур снаружи поля, не сливается с текстом */
+.ed{padding:6px 8px;border-radius:6px;min-height:1.4em}
+.ed:focus{outline:2px solid #93c5fd;outline-offset:2px}
+.ed:empty::before{content:attr(data-ph);color:#9ca3af}
+.desc.ed{padding:10px 12px;margin:4px 3px 14px;min-height:5em;background:#fcfcfd;border:1px solid #eceef2}
+.lbl.ed{margin:0 3px}
+#editor header .ed{margin:2px 3px}
+
+/* заголовок эксперимента */
+.lnk{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer}
+.lnk:hover{color:#2563eb}
+.who .lnk{color:#2563eb;font-size:13px;margin-left:6px}
+.addcol{border-top:1px dashed #e2e4e8;padding:8px 14px}
+.addcol button{background:none;border:0;color:#2563eb;cursor:pointer;font-size:14px}
+
+/* кнопки блока и колонки */
+.tools{position:absolute;top:8px;right:10px;display:none;gap:4px;z-index:5}
+.blk:hover .tools{display:flex}
+.tools button,.coltools button,.imtools button,.zbtns button{border:1px solid #cbd5e1;background:#fff;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px}
+.tools button:hover,.coltools button:hover,.imtools button:hover,.zbtns button:hover{background:#f1f5f9}
+.tools button:disabled{opacity:.35;cursor:default}
+.colhead{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.colhead .lbl{flex:1;margin-bottom:0}
+.coltools{display:none;gap:3px;flex:none}
+.col:hover .coltools{display:flex}
+.col:first-child [data-a=cl],.col:last-child [data-a=cr]{visibility:hidden}
+
+/* область картинок */
+.zone{border:1px dashed #cbd5e1;border-radius:8px;padding:10px;margin:0 3px}
+.zone:focus{outline:2px solid #93c5fd;outline-offset:2px}
+.zhint{text-align:center;color:#9ca3af;font-size:13px;padding:14px 4px}
+.imgs:not(:empty)+.zhint{display:none}
+.zbtns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.zbtns button{padding:5px 10px;font-size:13px}
+.imgs{margin-top:0}
+figure.im{position:relative;margin:0 0 12px}
+.imtools{position:absolute;top:6px;right:6px;display:none;gap:3px}
+figure.im:hover .imtools{display:flex}
+.cap{width:100%;box-sizing:border-box;margin-top:6px;border:1px solid #e2e4e8;border-radius:5px;padding:5px 8px;font-size:13px;text-align:center}
+.cap:focus{outline:2px solid #93c5fd;outline-offset:1px}
+figure.im.missing img{min-height:40px;border:2px solid #fca5a5}
+
+/* диалог даты и участников */
+dialog{border:0;border-radius:12px;padding:22px 24px;width:min(520px,92vw);box-shadow:0 12px 48px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(15,23,42,.55)}
+dialog h3{margin:0 0 14px}
+.drow{margin-bottom:14px}
+.drow>label{display:block;font-weight:600;font-size:13px;color:#444;margin-bottom:6px}
+.dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.dhead label{font-weight:600;font-size:13px;color:#444}
+.dhead button{padding:3px 10px;font-size:13px}
+.dfield{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+dialog input[type=number]{width:64px}
+dialog input[type=text],dialog input[type=number],dialog select{padding:7px 9px;border:1px solid #cbd5e1;border-radius:6px;font-size:14px}
+dialog button{padding:7px 12px;border:1px solid #cbd5e1;background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
+dialog .btn{background:#2563eb;color:#fff;border:0}
+dialog .btn:disabled{background:#9ca3af;cursor:not-allowed}
+.pp{display:flex;justify-content:space-between;align-items:center;padding:2px 0}
+.pp button{border:0;background:none;color:#9ca3af;padding:2px 8px}
+.pp button:hover{color:#b91c1c}
+.muted{color:#9ca3af;font-size:13px}
+.dadd{display:flex;gap:6px;margin-top:8px}
+.dadd input{flex:1}
+#dh{min-height:1.3em;margin:0 0 10px;color:#b45309;font-size:13px}
+.dact{display:flex;justify-content:flex-end;gap:8px}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="lab-journal 2">
+<title>Двухволновой лазер с брэгговскими решётками</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;margin:0;padding:24px;background:#f5f6f8;color:#222;line-height:1.5}
+header,main{max-width:1400px;margin:0 auto}
+header{margin-bottom:24px}
+h1{margin:0 0 4px;font-size:28px}
+.subtitle{margin:0;color:#666}
+.blk{background:#fff;border:1px solid #e2e4e8;border-radius:8px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.exp-h{background:#f8fafc;border-bottom:2px solid #e2e4e8;padding:10px 14px;border-radius:8px 8px 0 0}
+.line1{display:flex;align-items:baseline;gap:12px;white-space:nowrap;font-size:16px}
+.num{font-weight:700}
+.date{font-weight:600}
+.wd{color:#555}
+.who{margin-top:4px;font-size:14px;color:#444}
+.cols{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr))}
+.col{padding:12px 14px;border-right:1px solid #e2e4e8;min-width:0}
+.col:last-child{border-right:0}
+.lbl{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:#444;margin-bottom:8px}
+.txt{padding:14px 18px}
+.desc{overflow-wrap:anywhere}
+.imgs{margin-top:10px}
+figure{margin:0 0 12px}
+figure img{max-width:100%;height:auto;display:block;border-radius:4px;border:1px solid #dde0e4;cursor:zoom-in}
+figcaption{font-size:13px;text-align:center;margin-top:6px}
+ul,ol{padding-left:22px;margin:6px 0}
+p{margin:6px 0}
+h2{font-size:20px;margin:10px 0 6px}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:95vh;border-radius:6px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+@media(max-width:900px){.cols{grid-template-columns:1fr}.col{border-right:0;border-bottom:1px solid #eef0f3}}
+</style>
+</head>
+<body>
+<header><h1>Двухволновой лазер с брэгговскими решётками</h1></header>
+<main>
+<section class="blk exp" id="fyandob2">
+<div class="exp-h"><div class="line1"><span class="num">№ 1</span><span class="date">27 окт. 2026</span><span class="wd">(вторник)</span></div><div class="who">Присутствовали: Идырысов Н.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Исследуем двухволновой лазер с двумя брэгговскими решётками (FBG1 1087 нм и FBG2 1270 нм). План — три схемы:&nbsp;<p></p><ol><li>только FBG1 1087 нм;&nbsp;</li><li>FBG1 1087 нм и FBG2 1270 нм последовательно на одном выходе;&nbsp;</li><li>FBG1 1087 нм на одном выходе, FBG2 1270 нм на другом.</li></ol>Сначала собрать схему 1 и посмотреть, есть ли генерация стокса с катушкой SMF 10 км.<p></p></div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Найден PM-каплер на 1550 нм с делением мощности 50/50. Собрана схема 1: PM-каплер, катушка SMF-28e 10 км, Yb-волокно, Comb, лазерный диод (LD), изолятор (IS). Решётка FBG1 1087 нм стоит на выходе out 1.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-20-31-et12.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">Измерены мощности со всех портов: P1 = 116 мВт, P2 = 122 мВт. Сняты спектры. Out 1 (через FBG 1087): основной пик на 1142.28 нм, небольшой пик около 1087 нм. Out 2: пики около 1087 нм и на 1142.34 нм. I=10.6А.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-21-46-ks1w.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-22-14-ojyc.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-22-43-jxak.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-22-30-t41d.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">С катушкой SMF 10 км стокс (1142 нм) хорошо виден, по основной генерации (1087 нм) тоже хороший сигнал.</div></div>
+</div>
+</section>
+<section class="blk exp" id="q9g8eq1a">
+<div class="exp-h"><div class="line1"><span class="num">№ 2.1</span><span class="date">28 окт. 2026</span><span class="wd">(среда)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Перейти с катушки SMF 10 км на катушку P2O5.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Катушка SMF 10 км заменена на катушку P2O5 650 м.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-25-26-zq39.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 46 мВт, P2 = 393 мВт. I=10.6А</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-26-41-856e.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-27-01-17px.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-27-33-6kis.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-27-19-e7h8.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">C катушкой P2O5 650 м виден только пик 1087 нм, стокса нет.</div></div>
+</div>
+</section>
+<section class="blk exp" id="myfabi6h">
+<div class="exp-h"><div class="line1"><span class="num">№ 2.2</span><span class="date">28 окт. 2026</span><span class="wd">(среда)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Добавить вторую решётку 1270 нм.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Решётка FBG2 1270 нм приварена последовательно к решётке FBG1 1087 нм на выходе out1.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-29-43-v4de.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 25 мВт, P2 = 453 мВт. I=10.6 А.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-31-17-orzq.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-31-31-mrmk.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-31-53-c7u5.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-31-41-jmih.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Виден только пик 1087 нм, стокса нет.</div></div>
+</div>
+</section>
+<section class="blk exp" id="jjjyu56e">
+<div class="exp-h"><div class="line1"><span class="num">№ 2.3</span><span class="date">28 окт. 2026</span><span class="wd">(среда)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Согласно плану поставить решетку 1270 на второй выход (схема 3 из плана.).</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Решётка 1270 нм перенесена на out 2. На out 1 осталась 1087 нм.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-35-49-ijs0.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 46 мВт, P2 = 295 мВт. I=10.6 А.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-36-23-vlp4.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-36-37-iupn.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-36-59-564w.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-36-48-r9xd.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Только пик 1087 нм, стокса нет. По мнению А.В. Иваненко, судя по спектрам, изолятор блокирует стоксово излучение.</div></div>
+</div>
+</section>
+<section class="blk exp" id="cmzn3anf">
+<div class="exp-h"><div class="line1"><span class="num">№ 2.4</span><span class="date">28 окт. 2026</span><span class="wd">(среда)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Проверить предположение, что изолятор блокирует стокс: убрать изолятор из схемы.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Изолятор убран. Решётка 1087 нм на out 1, решётка 1270 нм на out 2.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-40-08-1aeo.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 58 мВт, P2 = 793 мВт. I=10.6 A.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-41-07-ehb4.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-40-57-nqa0.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-41-19-9xrr.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-41-30-43y2.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Без изолятора стокс по-прежнему не виден, только 1087 нм.</div></div>
+</div>
+</section>
+<section class="blk exp" id="vbug1zvl">
+<div class="exp-h"><div class="line1"><span class="num">№ 3.1</span><span class="date">30 окт. 2026</span><span class="wd">(пятница)</span></div><div class="who">Присутствовали: Рыбак А.А., Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Проверить, не связано ли отсутствие стокса с лазерным диодом накачки.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Лазерный диод заменён на другой (из лазера на 1080 нм). Схема без изолятора.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-44-10-p3x2.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 59 мВт, P2 = 797 мВт. I=10.6 А.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-45-14-kyvv.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-45-28-r1f5.png" alt=""><figcaption>out1</figcaption></figure><figure><img src="images/img-2026-11-22_18-45-39-87xc.png" alt=""><figcaption>out2</figcaption></figure><figure><img src="images/img-2026-11-22_18-45-49-fn1d.png" alt=""><figcaption>out2</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc"></div></div>
+</div>
+</section>
+<section class="blk exp" id="xaa6sql9">
+<div class="exp-h"><div class="line1"><span class="num">№ 3.2</span><span class="date">30 окт. 2026</span><span class="wd">(пятница)</span></div><div class="who">Присутствовали: Рыбак А.А., Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Вернуть изолятор в схему и сравнить спектр.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Изолятор возвращён в схему.</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-46-58-7kj3.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 39 мВт, P2 = 426 мВт. I=10.6 A. Измерены мощности, сняты спектры (OSA).</div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Спектр не изменился. Только 1087 нм, стокса нет.</div></div>
+</div>
+</section>
+<section class="blk exp" id="geempbl2">
+<div class="exp-h"><div class="line1"><span class="num">№ 3.3</span><span class="date">30 окт. 2026</span><span class="wd">(пятница)</span></div><div class="who">Присутствовали: Рыбак А.А., Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">А.В. Иваненко говорил, что решётка 1270 нм может быть нерабочей. Проверить это заменой решётки.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Решётка 1270 нм заменена на другую решётку 1270 нм (№ 3).</div><div class="imgs"><figure><img src="images/img-2026-11-22_18-48-50-s9aw.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P1 = 40 мВт, P2 = 427 мВт. I=10.6 A.</div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Ничего не изменилось c спектре. Решетка 1270 тут не причем.</div></div>
+</div>
+</section>
+<section class="blk exp" id="kro5d0ok">
+<div class="exp-h"><div class="line1"><span class="num">№ 4</span><span class="date">3 нояб. 2026</span><span class="wd">(вторник)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Нам казалось, что стокс не генерируется именно из-за катушки 650 м P2O5. Может быть, она какая-то неисправная. Для этого решили заменить эту катушку на катушку 350 м (она точно рабочая).</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Замененая катушка 650м на 350м.</div><div class="imgs"><figure><img src="images/img-2026-11-22_19-24-58-d9vw.png" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">Мы неправильно интерпретировали спектры на OSA, приняв паразитные выбросы за сигнал Стокса. Так что этот эксперимент можно не рассматривать как верный.<p><br></p></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc"></div></div>
+</div>
+</section>
+<section class="blk exp" id="fsjig0cn">
+<div class="exp-h"><div class="line1"><span class="num">№ 5</span><span class="date">9 нояб. 2026</span><span class="wd">(понедельник)</span></div><div class="who">Присутствовали: Иваненко А.В., Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Проверить генерацию стокса в схеме с каплером без изолятора с катушкой P2O5 650 м.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Изолятор убран. Сварена катушка P2O5 650 м (вместо 350 м).</div><div class="imgs"><figure><img src="images/img-2026-11-22_19-33-33-wk8p.jpg" alt=""></figure></div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">P(out1)=45mW<p>P(out2)=582mW</p><p>В спектре стокс не видно. Только 1087нм.</p></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc"></div></div>
+</div>
+</section>
+<section class="blk exp" id="mxui0pqq">
+<div class="exp-h"><div class="line1"><span class="num">№ 6</span><span class="date">10 нояб. 2026</span><span class="wd">(вторник)</span></div><div class="who">Присутствовали: Идырысов Н., Лахин В.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">По предложению А.В. Иваненко проверить изолятор из новой схемы излучением на длине волны около 1260 нм: возможно, он блокирует стокс.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">Взят изолятор из схемы, с двух сторон переварены SMF-коннекторы. Источник излучения — лазер для биологов, канал 1261 нм. Сначала снят спектр самого излучения, затем изолятор просвечивали в прямом (in-out) и обратном (out-in) направлениях.</div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">Мощности: без изолятора 60 мВт, in-out 8.1 мВт, out-in 1.4 мВт. I=10.6 А.&nbsp; Изгиб волокна перед изолятором ничего не изменил ни в прямом, ни в обратном направлении. Все коннекторы почищены и проверены;</div><div class="imgs"><figure><img src="images/img-2026-11-22_19-35-30-u8uy.png" alt=""><figcaption>Само излучение лазера</figcaption></figure><figure><img src="images/img-2026-11-22_19-35-45-haot.png" alt=""><figcaption>Излучение в прямом направлении (in-out)</figcaption></figure><figure><img src="images/img-2026-11-22_19-36-11-g4sv.png" alt=""><figcaption>Излучение в обратном направлении (out-in)</figcaption></figure></div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Из спектров следует, что изолятор на длине волны 1261 нм пропускает обратное излучение.</div></div>
+</div>
+</section>
+<section class="blk exp" id="bb68w2su">
+<div class="exp-h"><div class="line1"><span class="num">№ 7</span><span class="date">12 нояб. 2026</span><span class="wd">(четверг)</span></div><div class="who">Присутствовали: Иваненко А.В., Идырысов Н.</div></div>
+<div class="cols" style="--n:4">
+<div class="col"><div class="lbl">Предпосылки</div><div class="desc">Продолжить поиск причины отсутствия стокса.</div></div>
+<div class="col"><div class="lbl">Изменения в схеме</div><div class="desc">На out 1 сварили каплер 90/10 (SMF). Через коннектор соединили новый каплер с out 2.&nbsp;</div></div>
+<div class="col"><div class="lbl">Результаты</div><div class="desc">Посмотрели спектры и осциллограммы. В оптическом спектре в районе 1270 нм виден маленький пик.</div></div>
+<div class="col"><div class="lbl">Наблюдения и выводы</div><div class="desc">Возможные причины:<p></p><ol><li>недостаточная мощность диода;</li><li>длина волны решётки 1270 нм не совпадает с линией стокса, то есть решётка не выполняет функцию резонатора для стокса.</li></ol><p></p></div></div>
+</div>
+</section>
+<section class="blk txt" id="eqd61szl">
+<div class="desc"><h2>Итоговые выводы</h2><p></p></div>
+</section>
+</main>
+<div class="lightbox"><img alt=""></div>
+<script type="application/json" id="lab-journal-data">{"version":2,"title":"Двухволновой лазер с брэгговскими решётками","subtitle":"","people":["Иваненко А.В.","Рыбак А.А.","Идырысов Н.","Лахин В."],"blocks":[{"id":"fyandob2","type":"experiment","date":"2026-10-27","attendees":["Идырысов Н."],"columns":[{"title":"Предпосылки","text":"Исследуем двухволновой лазер с двумя брэгговскими решётками (FBG1 1087 нм и FBG2 1270 нм). План — три схемы:&nbsp;\u003cp>\u003c/p>\u003col>\u003cli>только FBG1 1087 нм;&nbsp;\u003c/li>\u003cli>FBG1 1087 нм и FBG2 1270 нм последовательно на одном выходе;&nbsp;\u003c/li>\u003cli>FBG1 1087 нм на одном выходе, FBG2 1270 нм на другом.\u003c/li>\u003c/ol>Сначала собрать схему 1 и посмотреть, есть ли генерация стокса с катушкой SMF 10 км.\u003cp>\u003c/p>","images":[]},{"title":"Изменения в схеме","text":"Найден PM-каплер на 1550 нм с делением мощности 50/50. Собрана схема 1: PM-каплер, катушка SMF-28e 10 км, Yb-волокно, Comb, лазерный диод (LD), изолятор (IS). Решётка FBG1 1087 нм стоит на выходе out 1.","images":[{"path":"images/img-2026-11-22_18-20-31-et12.png","caption":""}]},{"title":"Результаты","text":"Измерены мощности со всех портов: P1 = 116 мВт, P2 = 122 мВт. Сняты спектры. Out 1 (через FBG 1087): основной пик на 1142.28 нм, небольшой пик около 1087 нм. Out 2: пики около 1087 нм и на 1142.34 нм. I=10.6А.","images":[{"path":"images/img-2026-11-22_18-21-46-ks1w.png","caption":"out1"},{"path":"images/img-2026-11-22_18-22-14-ojyc.png","caption":"out1"},{"path":"images/img-2026-11-22_18-22-43-jxak.png","caption":"out2"},{"path":"images/img-2026-11-22_18-22-30-t41d.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"С катушкой SMF 10 км стокс (1142 нм) хорошо виден, по основной генерации (1087 нм) тоже хороший сигнал.","images":[]}]},{"id":"q9g8eq1a","type":"experiment","date":"2026-10-28","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Перейти с катушки SMF 10 км на катушку P2O5.","images":[]},{"title":"Изменения в схеме","text":"Катушка SMF 10 км заменена на катушку P2O5 650 м.","images":[{"path":"images/img-2026-11-22_18-25-26-zq39.png","caption":""}]},{"title":"Результаты","text":"P1 = 46 мВт, P2 = 393 мВт. I=10.6А","images":[{"path":"images/img-2026-11-22_18-26-41-856e.png","caption":"out1"},{"path":"images/img-2026-11-22_18-27-01-17px.png","caption":"out1"},{"path":"images/img-2026-11-22_18-27-33-6kis.png","caption":"out2"},{"path":"images/img-2026-11-22_18-27-19-e7h8.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"C катушкой P2O5 650 м виден только пик 1087 нм, стокса нет.","images":[]}]},{"id":"myfabi6h","type":"experiment","date":"2026-10-28","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Добавить вторую решётку 1270 нм.","images":[]},{"title":"Изменения в схеме","text":"Решётка FBG2 1270 нм приварена последовательно к решётке FBG1 1087 нм на выходе out1.","images":[{"path":"images/img-2026-11-22_18-29-43-v4de.png","caption":""}]},{"title":"Результаты","text":"P1 = 25 мВт, P2 = 453 мВт. I=10.6 А.","images":[{"path":"images/img-2026-11-22_18-31-17-orzq.png","caption":"out1"},{"path":"images/img-2026-11-22_18-31-31-mrmk.png","caption":"out1"},{"path":"images/img-2026-11-22_18-31-53-c7u5.png","caption":"out2"},{"path":"images/img-2026-11-22_18-31-41-jmih.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"Виден только пик 1087 нм, стокса нет.","images":[]}]},{"id":"jjjyu56e","type":"experiment","date":"2026-10-28","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Согласно плану поставить решетку 1270 на второй выход (схема 3 из плана.).","images":[]},{"title":"Изменения в схеме","text":"Решётка 1270 нм перенесена на out 2. На out 1 осталась 1087 нм.","images":[{"path":"images/img-2026-11-22_18-35-49-ijs0.png","caption":""}]},{"title":"Результаты","text":"P1 = 46 мВт, P2 = 295 мВт. I=10.6 А.","images":[{"path":"images/img-2026-11-22_18-36-23-vlp4.png","caption":"out1"},{"path":"images/img-2026-11-22_18-36-37-iupn.png","caption":"out1"},{"path":"images/img-2026-11-22_18-36-59-564w.png","caption":"out2"},{"path":"images/img-2026-11-22_18-36-48-r9xd.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"Только пик 1087 нм, стокса нет. По мнению А.В. Иваненко, судя по спектрам, изолятор блокирует стоксово излучение.","images":[]}]},{"id":"cmzn3anf","type":"experiment","date":"2026-10-28","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Проверить предположение, что изолятор блокирует стокс: убрать изолятор из схемы.","images":[]},{"title":"Изменения в схеме","text":"Изолятор убран. Решётка 1087 нм на out 1, решётка 1270 нм на out 2.","images":[{"path":"images/img-2026-11-22_18-40-08-1aeo.png","caption":""}]},{"title":"Результаты","text":"P1 = 58 мВт, P2 = 793 мВт. I=10.6 A.","images":[{"path":"images/img-2026-11-22_18-41-07-ehb4.png","caption":"out1"},{"path":"images/img-2026-11-22_18-40-57-nqa0.png","caption":"out1"},{"path":"images/img-2026-11-22_18-41-19-9xrr.png","caption":"out2"},{"path":"images/img-2026-11-22_18-41-30-43y2.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"Без изолятора стокс по-прежнему не виден, только 1087 нм.","images":[]}]},{"id":"vbug1zvl","type":"experiment","date":"2026-10-30","attendees":["Рыбак А.А.","Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Проверить, не связано ли отсутствие стокса с лазерным диодом накачки.","images":[]},{"title":"Изменения в схеме","text":"Лазерный диод заменён на другой (из лазера на 1080 нм). Схема без изолятора.","images":[{"path":"images/img-2026-11-22_18-44-10-p3x2.png","caption":""}]},{"title":"Результаты","text":"P1 = 59 мВт, P2 = 797 мВт. I=10.6 А.","images":[{"path":"images/img-2026-11-22_18-45-14-kyvv.png","caption":"out1"},{"path":"images/img-2026-11-22_18-45-28-r1f5.png","caption":"out1"},{"path":"images/img-2026-11-22_18-45-39-87xc.png","caption":"out2"},{"path":"images/img-2026-11-22_18-45-49-fn1d.png","caption":"out2"}]},{"title":"Наблюдения и выводы","text":"","images":[]}]},{"id":"xaa6sql9","type":"experiment","date":"2026-10-30","attendees":["Рыбак А.А.","Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Вернуть изолятор в схему и сравнить спектр.","images":[]},{"title":"Изменения в схеме","text":"Изолятор возвращён в схему.","images":[{"path":"images/img-2026-11-22_18-46-58-7kj3.png","caption":""}]},{"title":"Результаты","text":"P1 = 39 мВт, P2 = 426 мВт. I=10.6 A. Измерены мощности, сняты спектры (OSA).","images":[]},{"title":"Наблюдения и выводы","text":"Спектр не изменился. Только 1087 нм, стокса нет.","images":[]}]},{"id":"geempbl2","type":"experiment","date":"2026-10-30","attendees":["Рыбак А.А.","Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"А.В. Иваненко говорил, что решётка 1270 нм может быть нерабочей. Проверить это заменой решётки.","images":[]},{"title":"Изменения в схеме","text":"Решётка 1270 нм заменена на другую решётку 1270 нм (№ 3).","images":[{"path":"images/img-2026-11-22_18-48-50-s9aw.png","caption":""}]},{"title":"Результаты","text":"P1 = 40 мВт, P2 = 427 мВт. I=10.6 A.","images":[]},{"title":"Наблюдения и выводы","text":"Ничего не изменилось c спектре. Решетка 1270 тут не причем.","images":[]}]},{"id":"kro5d0ok","type":"experiment","date":"2026-11-03","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Нам казалось, что стокс не генерируется именно из-за катушки 650 м P2O5. Может быть, она какая-то неисправная. Для этого решили заменить эту катушку на катушку 350 м (она точно рабочая).","images":[]},{"title":"Изменения в схеме","text":"Замененая катушка 650м на 350м.","images":[{"path":"images/img-2026-11-22_19-24-58-d9vw.png","caption":""}]},{"title":"Результаты","text":"Мы неправильно интерпретировали спектры на OSA, приняв паразитные выбросы за сигнал Стокса. Так что этот эксперимент можно не рассматривать как верный.\u003cp>\u003cbr>\u003c/p>","images":[]},{"title":"Наблюдения и выводы","text":"","images":[]}]},{"id":"fsjig0cn","type":"experiment","date":"2026-11-09","attendees":["Иваненко А.В.","Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"Проверить генерацию стокса в схеме с каплером без изолятора с катушкой P2O5 650 м.","images":[]},{"title":"Изменения в схеме","text":"Изолятор убран. Сварена катушка P2O5 650 м (вместо 350 м).","images":[{"path":"images/img-2026-11-22_19-33-33-wk8p.jpg","caption":""}]},{"title":"Результаты","text":"P(out1)=45mW\u003cp>P(out2)=582mW\u003c/p>\u003cp>В спектре стокс не видно. Только 1087нм.\u003c/p>","images":[]},{"title":"Наблюдения и выводы","text":"","images":[]}]},{"id":"mxui0pqq","type":"experiment","date":"2026-11-10","attendees":["Идырысов Н.","Лахин В."],"columns":[{"title":"Предпосылки","text":"По предложению А.В. Иваненко проверить изолятор из новой схемы излучением на длине волны около 1260 нм: возможно, он блокирует стокс.","images":[]},{"title":"Изменения в схеме","text":"Взят изолятор из схемы, с двух сторон переварены SMF-коннекторы. Источник излучения — лазер для биологов, канал 1261 нм. Сначала снят спектр самого излучения, затем изолятор просвечивали в прямом (in-out) и обратном (out-in) направлениях.","images":[]},{"title":"Результаты","text":"Мощности: без изолятора 60 мВт, in-out 8.1 мВт, out-in 1.4 мВт. I=10.6 А.&nbsp; Изгиб волокна перед изолятором ничего не изменил ни в прямом, ни в обратном направлении. Все коннекторы почищены и проверены;","images":[{"path":"images/img-2026-11-22_19-35-30-u8uy.png","caption":"Само излучение лазера"},{"path":"images/img-2026-11-22_19-35-45-haot.png","caption":"Излучение в прямом направлении (in-out)"},{"path":"images/img-2026-11-22_19-36-11-g4sv.png","caption":"Излучение в обратном направлении (out-in)"}]},{"title":"Наблюдения и выводы","text":"Из спектров следует, что изолятор на длине волны 1261 нм пропускает обратное излучение.","images":[]}]},{"id":"bb68w2su","type":"experiment","date":"2026-11-12","attendees":["Иваненко А.В.","Идырысов Н."],"columns":[{"title":"Предпосылки","text":"Продолжить поиск причины отсутствия стокса.","images":[]},{"title":"Изменения в схеме","text":"На out 1 сварили каплер 90/10 (SMF). Через коннектор соединили новый каплер с out 2.&nbsp;","images":[]},{"title":"Результаты","text":"Посмотрели спектры и осциллограммы. В оптическом спектре в районе 1270 нм виден маленький пик.","images":[]},{"title":"Наблюдения и выводы","text":"Возможные причины:\u003cp>\u003c/p>\u003col>\u003cli>недостаточная мощность диода;\u003c/li>\u003cli>длина волны решётки 1270 нм не совпадает с линией стокса, то есть решётка не выполняет функцию резонатора для стокса.\u003c/li>\u003c/ol>\u003cp>\u003c/p>","images":[]}]},{"id":"eqd61szl","type":"text","text":"\u003ch2>Итоговые выводы\u003c/h2>\u003cp>\u003c/p>","images":[]}]}</script>
+<script>const lb=document.querySelector('.lightbox');document.querySelectorAll('main img').forEach(i=>i.onclick=()=>{lb.firstElementChild.src=i.src;lb.classList.add('open')});lb.onclick=()=>lb.classList.remove('open');document.onkeydown=e=>{if(e.key==='Escape')lb.classList.remove('open')};</script>
+</body>
+</html>
